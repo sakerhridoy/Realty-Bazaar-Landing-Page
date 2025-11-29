@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import logo from '../../assets/Images/logo.png';
 import { MdOutlineKeyboardArrowDown, MdLightMode } from 'react-icons/md';
 import { FaUserLock } from 'react-icons/fa';
@@ -46,6 +46,53 @@ const Navbar = () => {
     },
   ];
 
+  // Ref arrays to manage focus for dropdown anchors and menu items
+  const anchorRefs = useRef([]);
+  const menuItemRefs = useRef([]);
+
+  // Index of the currently open dropdown, or null
+  const [openIndex, setOpenIndex] = useState(null);
+
+  useEffect(() => {
+    // When a dropdown opens, focus its first menu item (if present)
+    if (openIndex !== null) {
+      const first = menuItemRefs.current[openIndex]?.[0];
+      if (first) first.focus();
+    }
+  }, [openIndex]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleDocClick(e) {
+      // If clicking outside any anchor or dropdown item, close all
+      const clickedAnchor = anchorRefs.current.some(
+        ref => ref && ref.contains(e.target)
+      );
+      const clickedMenu = menuItemRefs.current.some(
+        arr => arr && arr.some(el => el && el.contains && el.contains(e.target))
+      );
+      if (!clickedAnchor && !clickedMenu) setOpenIndex(null);
+    }
+
+    document.addEventListener('click', handleDocClick);
+    return () => document.removeEventListener('click', handleDocClick);
+  }, []);
+
+  const toggleAtIndex = index =>
+    setOpenIndex(prev => (prev === index ? null : index));
+
+  const handleAnchorKeyDown = (e, index) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleAtIndex(index);
+    } else if (e.key === 'Escape') {
+      setOpenIndex(null);
+      // Return focus to the anchor
+      const anchor = anchorRefs.current[index];
+      if (anchor) anchor.focus();
+    }
+  };
+
   return (
     <>
       <nav>
@@ -79,7 +126,7 @@ const Navbar = () => {
                   className="flex justify-between items-center gap-5"
                   role="menubar"
                 >
-                  {navItems.map(item => (
+                  {navItems.map((item, idx) => (
                     <li
                       key={item.title}
                       className="relative group cursor-pointer"
@@ -90,7 +137,14 @@ const Navbar = () => {
                         href="#" // Use '#' as a placeholder, would be a real link in a production app
                         className="flex items-center gap-1"
                         aria-haspopup="true"
-                        aria-expanded="false"
+                        aria-expanded={openIndex === idx}
+                        aria-controls={`menu-${idx}`}
+                        onClick={e => {
+                          e.preventDefault();
+                          toggleAtIndex(idx);
+                        }}
+                        onKeyDown={e => handleAnchorKeyDown(e, idx)}
+                        ref={el => (anchorRefs.current[idx] = el)}
                       >
                         {item.title}
                         <MdOutlineKeyboardArrowDown className="text-lg inline-block" />
@@ -98,18 +152,32 @@ const Navbar = () => {
 
                       {/* Dropdown */}
                       <ul
-                        className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10 ${
+                        id={`menu-${idx}`}
+                        className={`absolute left-0 top-full mt-2 bg-white shadow-lg rounded-md opacity-0 invisible transition-all duration-200 z-10 ${
                           item.isWide ? 'w-[200px]' : 'w-40'
+                        } ${
+                          openIndex === idx
+                            ? 'opacity-100 visible'
+                            : 'group-hover:opacity-100 group-hover:visible'
                         }`}
                         role="menu"
                       >
-                        {item.subItems.map(subItem => (
+                        {item.subItems.map((subItem, sidx) => (
                           <li
                             key={subItem.name}
                             className="px-4 py-2 hover:bg-gray-100"
                             role="none"
                           >
-                            <a href={subItem.href} role="menuitem">
+                            <a
+                              href={subItem.href}
+                              role="menuitem"
+                              ref={el => {
+                                menuItemRefs.current[idx] =
+                                  menuItemRefs.current[idx] || [];
+                                menuItemRefs.current[idx][sidx] = el;
+                              }}
+                              tabIndex={openIndex === idx ? 0 : -1}
+                            >
                               {subItem.name}
                             </a>
                           </li>
