@@ -1,31 +1,34 @@
 # Realty Bazaar – Real Estate Landing Page
 
-A modern, responsive, and SEO-friendly real estate landing page built with **React + Tailwind CSS**.
-This project includes a property search bar, hero banner, animated elements, price slider, and reusable UI components.
+A modern, responsive, and SEO-friendly real estate landing page built with
+**React + Tailwind CSS**. This project includes a property search bar, hero
+banner, animated elements, price slider, and reusable UI components.
 
 ---
+
 ### Live Demo : https://realty-bazaar-landing-page.vercel.app/
 
 ## 🚀 Features
 
-* Fully responsive modern UI
-* Fast and lightweight
-* Clean React components
-* Tailwind CSS utility classes
-* Price range slider with dynamic bubble
-* Smooth animations
-* Reusable components
-* Organized folder structure
+- Fully responsive modern UI
+- Fast and lightweight
+- Clean React components
+- Tailwind CSS utility classes
+- Price range slider with dynamic bubble
+- Smooth animations
+- Reusable components
+- Organized folder structure
+- Accessible navbar dropdown (keyboard support and proper aria-expanded usage)
 
 ---
 
 ## 📦 Technologies Used
 
-* **React JS**
-* **Tailwind CSS**
-* **Vite**
-* **React Icons**
-* **Framer Motion** (optional animations)
+- **React JS**
+- **Tailwind CSS**
+- **Vite**
+- **React Icons**
+- **Framer Motion** (optional animations)
 
 ---
 
@@ -67,8 +70,8 @@ npm run build
 
 ## 🤝 Contributing
 
-Contributions are welcome!
-If you want to improve UI, fix bugs, or add new features:
+Contributions are welcome! If you want to improve UI, fix bugs, or add new
+features:
 
 1. Fork the repo
 2. Create a new branch
@@ -79,8 +82,8 @@ If you want to improve UI, fix bugs, or add new features:
 
 ## 📜 License
 
-This project is open-source.
-You may copy, modify, and use the code for your own projects.
+This project is open-source. You may copy, modify, and use the code for your own
+projects.
 
 ---
 
