@@ -6,11 +6,10 @@ import invest12 from '../../assets/Images/invest1-2.png';
 import invest2 from '../../assets/Images/invest2-1.png';
 import invest22 from '../../assets/Images/invest2-2.png';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import card from '../../assets/Images/card.png'
+import card from '../../assets/Images/card.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay,Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const Invest = () => {

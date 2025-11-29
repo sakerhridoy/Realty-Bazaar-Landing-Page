@@ -1,78 +1,91 @@
-@import "tailwindcss";
-.container{
-  @apply max-w-[1300px] mx-auto
+@import 'tailwindcss';
+.container {
+  @apply max-w-[1300px] mx-auto;
 }
 @theme {
-  --font-arial:Arial, Helvetica, sans-serif; 
+  --font-arial: Arial, Helvetica, sans-serif;
 }
-.menu ul li a{
-  @apply font-arial font-medium text-base text-[#333333]
+.menu ul li a {
+  @apply font-arial font-medium text-base text-[#333333];
 }
-.rent a{
-  @apply font-arial font-normal text-lg text-[#999999]
+.rent a {
+  @apply font-arial font-normal text-lg text-[#999999];
 }
-.markeringList li{
-  @apply font-arial font-normal text-base leading-6 text-[#333333] list-disc list-inside
+.markeringList li {
+  @apply font-arial font-normal text-base leading-6 text-[#333333] list-disc list-inside;
 }
-@layer{
-  .byliner{
-  background: linear-gradient(90deg,rgba(219, 240, 255, 1) 0%, rgba(194, 229, 255, 1) 100%);
-}
-  .byliner2{
-  background: linear-gradient(90deg,rgba(94, 93, 67, 1) 0%, rgba(194, 255, 250, 1) 100%);
-}
-  .byliner3{
-  background: linear-gradient(90deg,rgba(105, 32, 49, 1) 0%, rgba(255, 194, 207, 1) 100%);
-}
-.serviceItem{
-  background: linear-gradient(90deg,rgba(244, 250, 255, 1) 0%, rgba(255, 255, 255, 1) 100%);
-}
-.slick-dots li.slick-active button::before{
-  color:#38A9FF !important;
-}
-.slick-dots li button::before{
-  color:#DADADA !important;
-}
-.swiper-pagination{
-  
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background: white;
-  border: 0.5px solid #38A9FF;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-input[type=range]::-moz-range-thumb {
-  height: 16px;
-  width: 16px;
-  background: white;
-  border: 0.5px solid #38A9FF;
-  border-radius: 50%;
-  cursor: pointer;
-}
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-}
-
-.marquee-item {
-  display: inline-block;
-  animation: marqueeMove 10s linear infinite;
-}
-
-@keyframes marqueeMove {
-  0% {
-    transform: translateX(160%);
-}
-  100% {
-    transform: translateX(-100%);
+@layer {
+  .byliner {
+    background: linear-gradient(
+      90deg,
+      rgba(219, 240, 255, 1) 0%,
+      rgba(194, 229, 255, 1) 100%
+    );
   }
-}
+  .byliner2 {
+    background: linear-gradient(
+      90deg,
+      rgba(94, 93, 67, 1) 0%,
+      rgba(194, 255, 250, 1) 100%
+    );
+  }
+  .byliner3 {
+    background: linear-gradient(
+      90deg,
+      rgba(105, 32, 49, 1) 0%,
+      rgba(255, 194, 207, 1) 100%
+    );
+  }
+  .serviceItem {
+    background: linear-gradient(
+      90deg,
+      rgba(244, 250, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+  .slick-dots li.slick-active button::before {
+    color: #38a9ff !important;
+  }
+  .slick-dots li button::before {
+    color: #dadada !important;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background: white;
+    border: 0.5px solid #38a9ff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    background: white;
+    border: 0.5px solid #38a9ff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    display: inline-block;
+    animation: marqueeMove 10s linear infinite;
+  }
+
+  @keyframes marqueeMove {
+    0% {
+      transform: translateX(160%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
