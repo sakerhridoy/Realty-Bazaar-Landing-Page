@@ -1,16 +1,94 @@
-# React + Vite
+# Realty Bazaar – Real Estate Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and SEO-friendly real estate landing page built with **React + Tailwind CSS**.
+This project includes a property search bar, hero banner, animated elements, price slider, and reusable UI components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+* Fully responsive modern UI
+* Fast and lightweight
+* Clean React components
+* Tailwind CSS utility classes
+* Price range slider with dynamic bubble
+* Smooth animations
+* Reusable components
+* Organized folder structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📦 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* **React JS**
+* **Tailwind CSS**
+* **Vite**
+* **React Icons**
+* **Framer Motion** (optional animations)
+
+---
+
+## 🛠 Installation & Setup
+
+Follow these steps to run the project locally:
+
+### **1. Clone the repository**
+
+```bash
+git clone git@github.com:sakerhridoy/Realty-Bazaar-Landing-Page.git
+```
+
+### **2. Go into the project folder**
+
+```bash
+cd Realty-Bazaar-Landing-Page
+```
+
+### **3. Install all dependencies**
+
+```bash
+npm install
+```
+
+### **4. Start the development server**
+
+```bash
+npm run dev
+```
+
+### **5. Build for production**
+
+```bash
+npm run build
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+If you want to improve UI, fix bugs, or add new features:
+
+1. Fork the repo
+2. Create a new branch
+3. Commit your changes
+4. Make a pull request
+
+---
+
+## 📜 License
+
+This project is open-source.
+You may copy, modify, and use the code for your own projects.
+
+---
+
+## 💬 Contact
+
+Developer: **Saker Ahmed Hridoy**
+
+GitHub: [https://github.com/sakerhridoy](https://github.com/sakerhridoy)
+
+---
+
+Happy coding! ✨
