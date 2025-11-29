@@ -1,10 +1,10 @@
-import React from 'react'
-import partner1 from '../../assets/Images/partner1.png'
-import partner2 from '../../assets/Images/partner2.png'
-import partner3 from '../../assets/Images/partner6.png'
-import partner4 from '../../assets/Images/partner3.png'
-import partner5 from '../../assets/Images/partner4.png'
-import partner6 from '../../assets/Images/partner5.png'
+import React from 'react';
+import partner1 from '../../assets/Images/partner1.png';
+import partner2 from '../../assets/Images/partner2.png';
+import partner3 from '../../assets/Images/partner3.png';
+import partner4 from '../../assets/Images/partner4.png';
+import partner5 from '../../assets/Images/partner5.png';
+import partner6 from '../../assets/Images/partner6.png';
 
 const OurPartners = () => {
   return (
@@ -18,7 +18,8 @@ const OurPartners = () => {
           </div>
           <div className="marquee-container">
             <div className="marquee-item">
-              <div className="grid grid-cols-6 gap-x-10">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10">
+                {' '}
                 <div className="item">
                   <img src={partner1} alt="partner" />
                 </div>
@@ -44,6 +45,6 @@ const OurPartners = () => {
       </section>
     </>
   );
-}
+};
 
-export default OurPartners
+export default OurPartners;
