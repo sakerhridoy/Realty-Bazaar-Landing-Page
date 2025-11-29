@@ -1,8 +1,8 @@
-import React from 'react'
-import propertyImage1 from '../../assets/Images/property1.png'
-import propertyImage2 from '../../assets/Images/property2.png'
-import propertyImage3 from '../../assets/Images/property3.png'
-import propertyImage4 from '../../assets/Images/property4.png'
+import React from 'react';
+import propertyImage1 from '../../assets/Images/property1.png';
+import propertyImage2 from '../../assets/Images/property2.png';
+import propertyImage3 from '../../assets/Images/property3.png';
+import propertyImage4 from '../../assets/Images/property4.png';
 import { BsArrowUpRightCircle } from 'react-icons/bs';
 
 const GotProperty = () => {
@@ -15,14 +15,15 @@ const GotProperty = () => {
               Explore property related services
             </h2>
           </div>
-          <div className="grid grid-cols-4 pb-[31px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-[31px] gap-4">
+            {' '}
             <div className="item pb-[49px] pe-[15px] border-r border-[#E5E5E5]">
               <div className="img pb-2">
                 <img
                   src={propertyImage1}
                   alt="property Image"
                   className="w-full rounded-lg"
-                />
+                />{' '}
               </div>
               <div className="flex justify-between">
                 <div className="text">
@@ -109,6 +110,6 @@ const GotProperty = () => {
       </section>
     </>
   );
-}
+};
 
-export default GotProperty
+export default GotProperty;

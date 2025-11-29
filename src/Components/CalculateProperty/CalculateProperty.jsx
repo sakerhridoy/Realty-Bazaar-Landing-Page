@@ -1,7 +1,7 @@
-import React from 'react'
-import calculateProperty from '../../assets/Images/calculateProperty.png'
+import React from 'react';
+import calculateProperty from '../../assets/Images/calculateProperty.png';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import bg from '../../assets/Images/bg.png'
+import bg from '../../assets/Images/bg.png';
 
 const CalculateProperty = () => {
   return (
@@ -26,15 +26,13 @@ const CalculateProperty = () => {
                     (apartment, house, land, etc.). Calculate the cost of your
                     property with our new Calculation Service.
                   </p>
-                  <button className="border border-[#38A9FF] rounded-sm py-[11px] ps-[15px] pe-[23px]">
-                    <a
-                      href=""
-                      className="text-base text-[#38A9FF] font-arial font-bold "
-                    >
-                      Learn more
-                    </a>
-                    <MdKeyboardArrowRight className="inline-block text-[#38A9FF] text-xl font-bold ps-1" />
-                  </button>
+                  <a
+                    href="/calculate"
+                    className="inline-flex items-center border border-[#38A9FF] rounded-sm py-[11px] ps-[15px] pe-[23px] text-base text-[#38A9FF] font-arial font-bold"
+                  >
+                    Calculate
+                    <MdKeyboardArrowRight className="text-[#38A9FF] text-xl font-bold ps-1" />
+                  </a>{' '}
                 </div>
                 <div className="w-[40%]">
                   <img src={calculateProperty} alt="Calculate Property" />
@@ -46,6 +44,6 @@ const CalculateProperty = () => {
       </section>
     </>
   );
-}
+};
 
-export default CalculateProperty
+export default CalculateProperty;

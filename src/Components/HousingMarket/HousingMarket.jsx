@@ -1,7 +1,7 @@
-import React from 'react'
-import housingMarketImage from '../../assets/Images/housingMarket.png'
+import React from 'react';
+import housingMarketImage from '../../assets/Images/housingMarket.png';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import bg from '../../assets/Images/bg.png'
+import bg from '../../assets/Images/bg.png';
 
 const HousingMarket = () => {
   return (
@@ -9,7 +9,7 @@ const HousingMarket = () => {
       <section className="py-14">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full">
-            <img src={bg} alt="Background" className='w-full'/>
+            <img src={bg} alt="Background" className="w-full" />
           </div>
           <div className="container">
             <div className="w-[85%] mx-auto">
@@ -41,15 +41,13 @@ const HousingMarket = () => {
                       choose us.
                     </li>
                   </ul>
-                  <button className="border border-[#38A9FF] rounded-sm py-[11px] ps-[15px] pe-[23px]">
-                    <a
-                      href=""
-                      className="text-base text-[#38A9FF] font-arial font-bold "
-                    >
-                      Learn more
-                    </a>
+                  <a
+                    href="/learn-more"
+                    className="inline-block border border-[#38A9FF] rounded-sm py-[11px] ps-[15px] pe-[23px] text-base text-[#38A9FF] font-arial font-bold"
+                  >
+                    Learn more
                     <MdKeyboardArrowRight className="inline-block text-[#38A9FF] text-xl font-bold ps-1" />
-                  </button>
+                  </a>{' '}
                 </div>
               </div>
             </div>
@@ -58,6 +56,6 @@ const HousingMarket = () => {
       </section>
     </>
   );
-}
+};
 
-export default HousingMarket
+export default HousingMarket;

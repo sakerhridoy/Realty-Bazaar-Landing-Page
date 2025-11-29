@@ -86,6 +86,12 @@ const BestDeal = () => {
           {/* Swiper Slider */}
           <Swiper
             slidesPerView={4}
+            breakpoints={{
+              320: { slidesPerView: 1, spaceBetween: 15 },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 25 },
+              1280: { slidesPerView: 4, spaceBetween: 25 },
+            }}
             spaceBetween={25}
             loop={true}
             autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -100,8 +106,11 @@ const BestDeal = () => {
               <SwiperSlide key={i}>
                 <div className="border border-[#E5E5E5] rounded-lg shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
                   <div className="img pb-[31px] relative">
-                    <img src={item.img} alt="" className="w-full rounded-lg" />
-
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full rounded-lg"
+                    />
                     <div className="w-[104px] h-[30px] rounded-sm bg-white absolute left-1/2 -translate-x-1/2 bottom-4 shadow text-center">
                       <p className="text-[#FF5722] font-bold font-arial text-base">
                         {item.tag}
