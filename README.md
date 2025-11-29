@@ -4,6 +4,7 @@ A modern, responsive, and SEO-friendly real estate landing page built with **Rea
 This project includes a property search bar, hero banner, animated elements, price slider, and reusable UI components.
 
 ---
+### Live Demo : https://realty-bazaar-landing-page.vercel.app/
 
 ## 🚀 Features
 
