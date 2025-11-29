@@ -33,6 +33,9 @@
 .slick-dots li button::before{
   color:#DADADA !important;
 }
+.swiper-pagination{
+  
+}
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;

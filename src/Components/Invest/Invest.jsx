@@ -1,8 +1,17 @@
 import React from 'react';
 import bg from '../../assets/Images/bg.png';
 import { TiStarFullOutline } from 'react-icons/ti';
-// import invest1 from '../../assets/Images/invest1-1.png'
-// import invest12 from '../../assets/Images/invest1-2.png'
+import invest1 from '../../assets/Images/invest1-1.png';
+import invest12 from '../../assets/Images/invest1-2.png';
+import invest2 from '../../assets/Images/invest2-1.png';
+import invest22 from '../../assets/Images/invest2-2.png';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+import card from '../../assets/Images/card.png'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay,Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const Invest = () => {
   return (
@@ -15,37 +24,175 @@ const Invest = () => {
           <div className="container">
             <div className="flex gap-[107px] py-[90px] px-[70px]">
               {' '}
-              <div className="left">
+              <div className="left pb-12">
                 <div className="headline pb-[22px]">
                   <h3 className="font-arial font-bold text-[32px] text-[#38a9ff]">
                     High-demand projects to invest now
                   </h3>
                 </div>
-                <div className="flex gap-[30px]">
-                  <div className="item">
-                    <h4>Project detail title 01</h4>
-                    <div className="flex justify-between items-center gap-1 pb-[17px]">
-                      <TiStarFullOutline className="text-[#FFD900] text-lg" />
-                      <h6 className="font-arial font-semibold text-sm text-[#072135]  pt-0.5">
-                        4.5
-                      </h6>
-                      <p className="font-arial font-medium text-sm text-[#666666]  pt-0.5">
-                        (100)
+
+                {/* Swiper Slider Start */}
+                <Swiper
+                  modules={[Pagination, Autoplay]}
+                  pagination={false}
+                  autoplay={{ delay: 2500 }}
+                  spaceBetween={30}
+                  slidesPerView={2}
+                  loop={true}
+                  className="w-[858px] pb-12"
+                >
+                  {/* Slide 1 */}
+                  <SwiperSlide>
+                    <div className="item w-[414px]">
+                      <h4 className="font-arial font-bold text-xl text-[#072135]">
+                        Project detail title 01
+                      </h4>
+                      <div className="flex items-center gap-1 pb-[17px]">
+                        <TiStarFullOutline className="text-[#FFD900] text-lg" />
+                        <h6 className="font-arial font-semibold text-sm text-[#072135] pt-0.5">
+                          4.5
+                        </h6>
+                        <p className="font-arial font-medium text-sm text-[#666666] pt-0.5">
+                          (100)
                         </p>
-                      <ul className="ms-6">
-                        <li className='list-disc'>
-                          <p className=" font-semibold text-sm text-[#333333]  pt-0.5">
-                            By Test 01 Developers
-                          </p>
-                        </li>
-                      </ul>  
-                    </div>
-                    {/* <div className="innerItem">
-                      <div className="flex gap-[30px]">
-                        <img src={invest1} alt="invest image" />
-                        <img src={invest12} alt="invest image" />
+                        <ul className="ms-6">
+                          <li className="list-disc">
+                            <p className="font-semibold text-sm text-[#333333] pt-0.5">
+                              By Test 01 Developers
+                            </p>
+                          </li>
+                        </ul>
                       </div>
-                    </div> */}
+                      <div className="innerItem">
+                        <div className="flex gap-[30px] pb-[19px]">
+                          <img src={invest1} alt="invest" className="w-48" />
+                          <img src={invest12} alt="invest" className="w-48" />
+                        </div>
+                        <article>
+                          <p className="font-arial text-base text-[#333333] leading-[22px]">
+                            Lorem ipsum dolor sit amet consectetur. Suspendisse
+                            quis arcu suspendisse eget interdum vestibulum urna.
+                            Vel risus nisi quis sed neque.
+                          </p>
+                          <p className="font-arial text-base text-[#333333] leading-[22px] pt-8">
+                            Ridiculus facilisis ipsum sit eu neque ultricies
+                            fusce dolor pellentesque. Eget pellentesque suscipit
+                            mattis rutrum.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+
+                  {/* Slide 2 */}
+                  <SwiperSlide>
+                    <div className="item w-[414px]">
+                      <h4 className="font-arial font-bold text-xl text-[#072135]">
+                        Project detail title 02
+                      </h4>
+                      <div className="flex items-center gap-1 pb-[17px]">
+                        <TiStarFullOutline className="text-[#FFD900] text-lg" />
+                        <h6 className="font-arial font-semibold text-sm text-[#072135] pt-0.5">
+                          4.3
+                        </h6>
+                        <p className="font-arial font-medium text-sm text-[#666666] pt-0.5">
+                          (100)
+                        </p>
+                        <ul className="ms-6">
+                          <li className="list-disc">
+                            <p className="font-semibold text-sm text-[#333333] pt-0.5">
+                              By Test 02 Developers
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="innerItem">
+                        <div className="flex gap-[30px] pb-[19px]">
+                          <img src={invest2} alt="invest" className="w-48" />
+                          <img src={invest22} alt="invest" className="w-48" />
+                        </div>
+                        <article>
+                          <p className="font-arial text-base text-[#333333] leading-[22px]">
+                            Lorem ipsum dolor sit amet consectetur. Suspendisse
+                            quis arcu suspendisse eget interdum vestibulum urna.
+                            Vel risus nisi quis sed neque.
+                          </p>
+                          <p className="font-arial text-base text-[#333333] leading-[22px] pt-8">
+                            Ridiculus facilisis ipsum sit eu neque ultricies
+                            fusce dolor pellentesque. Eget pellentesque suscipit
+                            mattis rutrum.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+
+                  {/* Slide 3 */}
+                  <SwiperSlide>
+                    <div className="item w-[414px]">
+                      <h4 className="font-arial font-bold text-xl text-[#072135]">
+                        Project detail title 03
+                      </h4>
+                      <div className="flex items-center gap-1 pb-[17px]">
+                        <TiStarFullOutline className="text-[#FFD900] text-lg" />
+                        <h6 className="font-arial font-semibold text-sm text-[#072135] pt-0.5">
+                          4.5
+                        </h6>
+                        <p className="font-arial font-medium text-sm text-[#666666] pt-0.5">
+                          (100)
+                        </p>
+                        <ul className="ms-6">
+                          <li className="list-disc">
+                            <p className="font-semibold text-sm text-[#333333] pt-0.5">
+                              By Test 01 Developers
+                            </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="innerItem">
+                        <div className="flex gap-[30px] pb-[19px]">
+                          <img src={invest1} alt="invest" className="w-48" />
+                          <img src={invest12} alt="invest" className="w-48" />
+                        </div>
+                        <article>
+                          <p className="font-arial text-base text-[#333333] leading-[22px]">
+                            Lorem ipsum dolor sit amet consectetur. Suspendisse
+                            quis arcu suspendisse eget interdum vestibulum urna.
+                            Vel risus nisi quis sed neque.
+                          </p>
+                          <p className="font-arial text-base text-[#333333] leading-[22px] pt-8">
+                            Ridiculus facilisis ipsum sit eu neque ultricies
+                            fusce dolor pellentesque. Eget pellentesque suscipit
+                            mattis rutrum.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </Swiper>
+                {/* Swiper Slider End */}
+              </div>
+              <div className="right">
+                <div className="w-[335px] rounded-lg bg-[#072135] overflow-hidden h-full relative">
+                  <div className="pt-8 ps-[27px] pe-[22px] z-20 relative">
+                    <h3 className="text-white text-[22px] font-arial font-bold pb-3.5">
+                      Get matched with local projects
+                    </h3>
+                    <a
+                      href="/calculate"
+                      className="inline-flex items-center border border-white rounded-sm py-[11px] px-[23px] text-base text-white font-arial font-bold"
+                    >
+                      Learn more
+                      <MdKeyboardArrowRight className="text-white text-xl font-bold ps-1" />
+                    </a>
+                  </div>
+
+                  <div className="img w-[80%] h-full ">
+                    <img
+                      src={card}
+                      alt="card"
+                      className="w-[88%] object-cover rounded-tl-[900px] rounded-bl-[200px] absolute -bottom-20 left-12"
+                    />
                   </div>
                 </div>
               </div>
