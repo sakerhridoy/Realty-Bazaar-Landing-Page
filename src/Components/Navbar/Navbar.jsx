@@ -228,16 +228,17 @@ const Navbar = () => {
                 </div>
 
                 {/* Add Property Button */}
-                <div
+                <button
+                  type="button"
                   onClick={() => setShowPropertyForm(true)}
                   className="property bg-[#38A9FF] rounded-sm h-9 px-3 cursor-pointer flex items-center"
-                  role="button"
                   aria-controls="add-property-modal"
+                  aria-expanded={showPropertyForm}
                 >
                   <span className="font-arial font-bold text-base text-white">
                     + Add Property
                   </span>
-                </div>
+                </button>
               </div>
               {showPropertyForm && (
                 <div
