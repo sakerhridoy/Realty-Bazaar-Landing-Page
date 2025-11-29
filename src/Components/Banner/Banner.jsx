@@ -276,7 +276,7 @@ const Banner = () => {
                 </div>
               </div>
               <div className="item">
-                <div className="relative byliner3 rounded-[20px] ps-[111px]">
+                <div className="relative byliner3 rounded-[20px] ps-[111px] -z-1">
                   <div className="absolute bottom-0 right-0">
                     <img
                       src={bannerImage}

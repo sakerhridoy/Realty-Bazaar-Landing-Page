@@ -19,7 +19,7 @@ const Navbar = () => {
       <>
         <nav>
           <div className="container">
-            <div className="flex py-[29px] gap-[197px] justify-between items-center">
+            <div className="flex py-[29px] gap-[170px] justify-between items-center">
               <div className="w-[20%]">
                 <div className="flex gap-[18px] items-center">
                   <img
@@ -35,9 +35,9 @@ const Navbar = () => {
                   </select>
                 </div>
               </div>
-              <div className="w-[80%] flex gap-[188px] justify-between items-center">
+              <div className="w-[80%] flex gap-[170px] justify-between items-center">
                 <div className="menu">
-                  <ul className="flex justify-between items-center gap-[30px]">
+                  <ul className="flex justify-between items-center gap-5">
                     {/* Buyers */}
                     <li className="relative group cursor-pointer">
                       <a href="" className="flex items-center gap-1">
@@ -46,7 +46,7 @@ const Navbar = () => {
                       </a>
 
                       {/* Dropdown */}
-                      <ul className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <ul className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-1">
                         <li className="px-4 py-2 hover:bg-gray-100">
                           <a href="">Buy Property</a>
                         </li>
@@ -67,7 +67,7 @@ const Navbar = () => {
                       </a>
 
                       {/* Dropdown */}
-                      <ul className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <ul className="absolute left-0 top-full mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-1">
                         <li className="px-4 py-2 hover:bg-gray-100">
                           <a href="">Rent House</a>
                         </li>
@@ -88,7 +88,7 @@ const Navbar = () => {
                       </a>
 
                       {/* Dropdown */}
-                      <ul className="absolute left-0 top-full mt-2 w-[200px] bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <ul className="absolute left-0 top-full mt-2 w-[200px] bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-1">
                         <li className="px-4 py-2 hover:bg-gray-100">
                           <a href="">Post Property</a>
                         </li>
@@ -103,7 +103,7 @@ const Navbar = () => {
                   </ul>
                 </div>
                 {/* Icons Group */}
-                <div className="flex justify-between items-center gap-6">
+                <div className="flex justify-between items-center gap-3">
                   {/* Mode Toggle */}
                   <div
                     className="mode w-8 h-8 cursor-pointer"
