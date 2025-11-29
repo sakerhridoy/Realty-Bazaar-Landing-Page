@@ -14,24 +14,36 @@ const Agents = () => {
       name: 'Cameron Williamson',
       title: 'Imperial Property Group Agent',
       image: agent1,
+      linkedinUrl: 'https://www.linkedin.com/in/cameron-williamson',
+      instagramUrl: 'https://www.instagram.com/cameron.w',
+      facebookUrl: 'https://www.facebook.com/cameron.williamson',
     },
     {
       id: 2,
       name: 'Frank Bashirian',
       title: 'Imperial Property Group Agent',
       image: agent2,
+      linkedinUrl: 'https://www.linkedin.com/in/frank-bashirian',
+      instagramUrl: 'https://www.instagram.com/frank.b',
+      facebookUrl: 'https://www.facebook.com/frank.bashirian',
     },
     {
       id: 3,
       name: 'Jenny Wilson',
       title: 'Imperial Property Group Agent',
       image: agent3,
+      linkedinUrl: 'https://www.linkedin.com/in/jenny-wilson',
+      instagramUrl: 'https://www.instagram.com/jenny.w',
+      facebookUrl: 'https://www.facebook.com/jenny.wilson',
     },
     {
       id: 4,
       name: 'Bessie Cooper',
       title: 'Imperial Property Group Agent',
       image: agent4,
+      linkedinUrl: 'https://www.linkedin.com/in/bessie-cooper',
+      instagramUrl: 'https://www.instagram.com/bessie.c',
+      facebookUrl: 'https://www.facebook.com/bessie.cooper',
     },
   ];
 
@@ -59,9 +71,41 @@ const Agents = () => {
                   {agent.title}
                 </p>
                 <div className="icon flex gap-5 items-center justify-center pt-[43px]">
-                  <CiLinkedin className="text-xl text-[#38A9FF]" />
-                  <FaInstagram className="text-xl text-[#38A9FF]" />
-                  <LiaFacebookSquare className="text-2xl text-[#38A9FF]" />
+                  {agent.linkedinUrl && (
+                    <a
+                      href={agent.linkedinUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${agent.name} LinkedIn`}
+                      className="text-xl text-[#38A9FF]"
+                    >
+                      <CiLinkedin />
+                    </a>
+                  )}
+
+                  {agent.instagramUrl && (
+                    <a
+                      href={agent.instagramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${agent.name} Instagram`}
+                      className="text-xl text-[#38A9FF]"
+                    >
+                      <FaInstagram />
+                    </a>
+                  )}
+
+                  {agent.facebookUrl && (
+                    <a
+                      href={agent.facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${agent.name} Facebook`}
+                      className="text-2xl text-[#38A9FF]"
+                    >
+                      <LiaFacebookSquare />
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
