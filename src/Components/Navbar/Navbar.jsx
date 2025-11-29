@@ -8,6 +8,17 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [showPropertyForm, setShowPropertyForm] = useState(false);
+  const [propertyData, setPropertyData] = useState({
+    title: '',
+    location: '',
+    price: '',
+  });
+  const [formError, setFormError] = useState(null);
+
+  // Refs for modal focus management
+  const modalRef = useRef(null);
+  const firstInputRef = useRef(null);
+  const addPropertyButtonRef = useRef(null);
 
   // Toggle dark mode and apply/remove the 'dark' class to the document body
   const toggleDarkMode = () => {
@@ -92,6 +103,28 @@ const Navbar = () => {
       if (anchor) anchor.focus();
     }
   };
+
+  // When modal opens, focus the first input and add an Escape close handler
+  useEffect(() => {
+    if (showPropertyForm) {
+      // small delay to allow rendering
+      setTimeout(() => firstInputRef.current?.focus(), 0);
+    }
+
+    function handleEscape(e) {
+      if (e.key === 'Escape') setShowPropertyForm(false);
+    }
+
+    if (showPropertyForm) document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [showPropertyForm]);
+
+  // return focus to the Add Property button when closing the modal
+  useEffect(() => {
+    if (!showPropertyForm && addPropertyButtonRef.current) {
+      addPropertyButtonRef.current.focus();
+    }
+  }, [showPropertyForm]);
 
   return (
     <>
@@ -218,7 +251,6 @@ const Navbar = () => {
                   {showProfile && (
                     <div className="absolute right-0 mt-3 w-[180px] bg-white shadow-xl rounded-md p-3 text-black z-50">
                       <p className="font-bold">User Profile</p>
-                      {/* Backend Friendly: This would likely come from an auth context or API */}
                       <p className="text-sm mt-1">Email: user@mail.com</p>
                       <button className="mt-2 w-full bg-[#072135] text-white py-1 rounded-sm">
                         Logout
@@ -234,6 +266,7 @@ const Navbar = () => {
                   className="property bg-[#38A9FF] rounded-sm h-9 px-3 cursor-pointer flex items-center"
                   aria-controls="add-property-modal"
                   aria-expanded={showPropertyForm}
+                  ref={addPropertyButtonRef}
                 >
                   <span className="font-arial font-bold text-base text-white">
                     + Add Property
@@ -246,38 +279,147 @@ const Navbar = () => {
                   role="dialog"
                   aria-modal="true"
                   id="add-property-modal"
+                  onClick={e => {
+                    // only close when clicking the backdrop (not when clicking inside modal)
+                    if (e.target === e.currentTarget)
+                      setShowPropertyForm(false);
+                  }}
                 >
-                  <div className="bg-white rounded-md w-[350px] p-5 shadow-2xl">
+                  <div
+                    ref={modalRef}
+                    className="bg-white rounded-md w-[350px] p-5 shadow-2xl"
+                    role="document"
+                    aria-labelledby="add-property-title"
+                    onKeyDown={e => {
+                      // basic focus trap inside modal
+                      if (e.key === 'Tab') {
+                        const nodes = modalRef.current?.querySelectorAll(
+                          'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+                        );
+                        if (!nodes || nodes.length === 0) return;
+                        const focusable = Array.from(nodes).filter(
+                          n =>
+                            n.offsetWidth > 0 ||
+                            n.offsetHeight > 0 ||
+                            n === document.activeElement
+                        );
+                        const first = focusable[0];
+                        const last = focusable[focusable.length - 1];
+
+                        if (e.shiftKey && document.activeElement === first) {
+                          e.preventDefault();
+                          last.focus();
+                        } else if (
+                          !e.shiftKey &&
+                          document.activeElement === last
+                        ) {
+                          e.preventDefault();
+                          first.focus();
+                        }
+                      }
+                    }}
+                  >
                     <h2 className="text-xl font-bold mb-3 text-[#072135]">
-                      Add New Property
+                      <span id="add-property-title">Add New Property</span>
                     </h2>
                     <input
+                      ref={firstInputRef}
                       type="text"
                       placeholder="Property Title"
                       className="w-full border p-2 mb-3 rounded"
                       aria-label="Property Title"
+                      value={propertyData.title}
+                      onChange={e =>
+                        setPropertyData(p => ({ ...p, title: e.target.value }))
+                      }
                     />
                     <input
                       type="text"
                       placeholder="Location"
                       className="w-full border p-2 mb-3 rounded"
                       aria-label="Location"
+                      value={propertyData.location}
+                      onChange={e =>
+                        setPropertyData(p => ({
+                          ...p,
+                          location: e.target.value,
+                        }))
+                      }
                     />
                     <input
                       type="number"
                       placeholder="Price"
                       className="w-full border p-2 mb-3 rounded"
                       aria-label="Price"
+                      value={propertyData.price}
+                      onChange={e =>
+                        setPropertyData(p => ({ ...p, price: e.target.value }))
+                      }
                     />
+                    {formError && (
+                      <p className="text-sm text-red-600 mb-3">{formError}</p>
+                    )}
 
                     <div className="flex justify-between">
                       <button
-                        onClick={() => setShowPropertyForm(false)}
+                        onClick={() => {
+                          setShowPropertyForm(false);
+                          setPropertyData({
+                            title: '',
+                            location: '',
+                            price: '',
+                          });
+                          setFormError(null);
+                        }}
                         className="px-4 py-2 bg-gray-400 rounded text-white"
                       >
                         Cancel
                       </button>
-                      <button className="px-4 py-2 bg-[#38A9FF] text-white rounded">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          // validation
+                          if (!propertyData.title.trim()) {
+                            setFormError('Please enter a property title.');
+                            return;
+                          }
+                          if (!propertyData.location.trim()) {
+                            setFormError('Please enter a location.');
+                            return;
+                          }
+                          if (
+                            !propertyData.price ||
+                            Number(propertyData.price) <= 0
+                          ) {
+                            setFormError(
+                              'Please enter a valid price greater than 0.'
+                            );
+                            return;
+                          }
+
+                          // propagate / submit (placeholder — replace with real handler)
+                          try {
+                            // Dispatch a custom event so parent components can listen if needed
+                            window.dispatchEvent(
+                              new CustomEvent('realty:addProperty', {
+                                detail: propertyData,
+                              })
+                            );
+                          } catch (err) {
+                            console.log('Submitted property', propertyData);
+                          }
+
+                          // reset + close
+                          setShowPropertyForm(false);
+                          setPropertyData({
+                            title: '',
+                            location: '',
+                            price: '',
+                          });
+                          setFormError(null);
+                        }}
+                        className="px-4 py-2 bg-[#38A9FF] text-white rounded"
+                      >
                         Save
                       </button>
                     </div>
