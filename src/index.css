@@ -14,8 +14,8 @@
 .markeringList li {
   @apply font-arial font-normal text-base leading-6 text-[#333333] list-disc list-inside;
 }
-.footerMenu a{
-  @apply font-arial font-normal text-[15px] text-white
+.footerMenu a {
+  @apply font-arial font-normal text-[15px] text-white;
 }
 @layer {
   .byliner {
@@ -82,8 +82,12 @@
     display: inline-block;
     animation: marqueeMove 10s linear infinite;
   }
-  .sellLenier{
- background: linear-gradient(90deg,rgba(0, 0, 0, 0.01) 0%, rgba(255, 247, 247, 0) 100%);
+  .sellLenier {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.01) 0%,
+      rgba(255, 247, 247, 0) 100%
+    );
   }
 
   @keyframes marqueeMove {
