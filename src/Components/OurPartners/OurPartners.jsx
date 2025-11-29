@@ -21,22 +21,22 @@ const OurPartners = () => {
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10">
                 {' '}
                 <div className="item">
-                  <img src={partner1} alt="partner" />
+                  <img src={partner1} alt="Partner 1 logo" />
                 </div>
                 <div className="item">
-                  <img src={partner2} alt="partner" />
+                  <img src={partner2} alt="Partner 2 logo" />
                 </div>
                 <div className="item">
-                  <img src={partner3} alt="partner" />
+                  <img src={partner3} alt="Partner 3 logo" />
                 </div>
                 <div className="item">
-                  <img src={partner4} alt="partner" />
+                  <img src={partner4} alt="Partner 4 logo" />
                 </div>
                 <div className="item">
-                  <img src={partner5} alt="partner" />
+                  <img src={partner5} alt="Partner 5 logo" />
                 </div>
                 <div className="item">
-                  <img src={partner6} alt="partner" />
+                  <img src={partner6} alt="Partner 6 logo" />
                 </div>
               </div>
             </div>
