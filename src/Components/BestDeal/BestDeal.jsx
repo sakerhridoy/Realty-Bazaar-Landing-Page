@@ -54,7 +54,7 @@ const BestDeal = () => {
         <div className="relative">
           <div className="headline text-center">
             <h2 className="font-arial font-bold text-[35px] text-[#072135] pb-8">
-              Explore property related services
+              We always offer best deals
             </h2>
           </div>
 
