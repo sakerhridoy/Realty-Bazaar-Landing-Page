@@ -8,14 +8,14 @@ import stars from '../../assets/Images/stars.svg'
 const Services = () => {
   return (
     <>
-      <section className="py-[95px] ">
+      <section className="py-10 md:py-[95px] ">
         <div className="container">
-          <div className="headline text-center">
+          <div className="headline text-center mx-4 lg:mx-0">
             <h2 className="font-arial font-bold text-[35px] text-[#38A9FF] pb-8">
               Explore property related services
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-[30px] pb-[31px]">
+          <div className="grid md:grid-cols-4 gap-[30px] pb-[31px] mx-4 lg:mx-0">
             <div className="serviceItem py-[27px] ps-[18px] pe-7 rounded-xl border border-[#E5E5E5]">
               <div className="icon pb-[21px]">
                 <img src={service1} alt="service icon" />
@@ -61,7 +61,7 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="marquee-container">
+          <div className="marquee-container mx-4 lg:mx-0">
             <div className="marquee-item">
               <div className="relative w-[514px] mx-auto rounded-sm bg-[#072135] py-[13px] px-[62px] text-center">
                 <h3 className="font-arial font-bold text-lg">

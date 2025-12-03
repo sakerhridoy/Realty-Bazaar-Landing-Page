@@ -22,7 +22,6 @@ const Banner = () => {
      slidesToShow: 1,
      slidesToScroll: 1,
      autoplay: true,
-     speed: 2000,
      autoplaySpeed: 2000,
      cssEase: 'linear',
    };
@@ -30,20 +29,20 @@ const Banner = () => {
   return (
     <>
       <section>
-        <div className="container">
+        <div className="container mx-4 lg:mx-0">
           <div className="slider-container">
             <Slider {...settings}>
               <div className="item">
-                <div className="relative byliner rounded-[20px] ps-[111px]">
+                <div className="relative byliner rounded-[20px] px-4 md:px-0 md:ps-[111px] h-screen">
                   <div className="absolute bottom-0 right-0">
                     <img
                       src={bannerImage}
                       alt="Banner Image"
-                      className="w-[971px]"
+                      className="lg:w-[971px]"
                     />
                   </div>
-                  <div className="w-[495px] pt-[110px]">
-                    <h1 className="font-arial font-bold text-[52px] text-[#072135] pb-[26px]">
+                  <div className="md:w-[495px] pt-[110px]">
+                    <h1 className="font-arial font-bold text-4xl md:text-[52px] text-[#072135] pb-[26px]">
                       Find a perfect home you'll love
                     </h1>
                     <p className="font-arial font-bold text-[22px] text-[#072135] leading-8">
@@ -51,30 +50,32 @@ const Banner = () => {
                       rental of real estate.
                     </p>
                   </div>
-                  <div className="pt-[62px] pb-[57px]">
-                    <div className="w-[91%] px-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
-                      <div className="rent flex items-center gap-[60px] pb-[25px] pt-5">
-                        <a href="" className="text-[#333333]">
-                          Buy
-                        </a>
-                        <a href="">Rent</a>
-                        <a href="">Projects</a>
-                        <a href="">Commercial</a>
-                        <a href="">New Launch</a>
-                        <div className="relative">
-                          <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
-                            NEW
-                          </span>
-
-                          <a
-                            href="#"
-                            className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
-                          >
-                            Post Free Property Ad
+                  <div className="py-5 md:pt-[62px] md:pb-[57px]">
+                    <div className="md:w-[91%] px-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full md:after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
+                      <div className="hidden md:block">
+                        <div className="rent flex flex-col md:flex-row items-center gap-[60px] pb-[25px] pt-5">
+                          <a href="" className="text-[#333333]">
+                            Buy
                           </a>
+                          <a href="">Rent</a>
+                          <a href="">Projects</a>
+                          <a href="">Commercial</a>
+                          <a href="">New Launch</a>
+                          <div className="relative">
+                            <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
+                              NEW
+                            </span>
+
+                            <a
+                              href="#"
+                              className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
+                            >
+                              Post Free Property Ad
+                            </a>
+                          </div>
                         </div>
                       </div>
-                      <div className="py-[7.5px] flex items-center gap-8">
+                      <div className="py-[7.5px] flex flex-col md:flex-row items-center gap-8">
                         {/* Location */}
                         <div className="flex items-center gap-2">
                           <FaLocationDot className="text-[#38A9FF] text-lg" />
@@ -155,16 +156,16 @@ const Banner = () => {
                 </div>
               </div>
               <div className="item">
-                <div className="relative byliner2 rounded-[20px] ps-[111px]">
+                <div className="relative byliner2 rounded-[20px] px-4 md:px-0 md:ps-[111px] h-screen">
                   <div className="absolute bottom-0 right-0">
                     <img
                       src={bannerImage}
                       alt="Banner Image"
-                      className="w-[971px]"
+                      className="lg:w-[971px]"
                     />
                   </div>
-                  <div className="w-[495px] pt-[110px]">
-                    <h1 className="font-arial font-bold text-[52px] text-[#072135] pb-[26px]">
+                  <div className="md:w-[495px] pt-[110px]">
+                    <h1 className="font-arial font-bold text-4xl md:text-[52px] text-[#072135] pb-[26px]">
                       Find a perfect home you'll love
                     </h1>
                     <p className="font-arial font-bold text-[22px] text-[#072135] leading-8">
@@ -172,30 +173,32 @@ const Banner = () => {
                       rental of real estate.
                     </p>
                   </div>
-                  <div className="pt-[62px] pb-[57px]">
-                    <div className="w-[91%] px-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
-                      <div className="rent flex items-center gap-[60px] pb-[25px] pt-5">
-                        <a href="" className="text-[#333333]">
-                          Buy
-                        </a>
-                        <a href="">Rent</a>
-                        <a href="">Projects</a>
-                        <a href="">Commercial</a>
-                        <a href="">New Launch</a>
-                        <div className="relative">
-                          <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
-                            NEW
-                          </span>
-
-                          <a
-                            href="#"
-                            className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
-                          >
-                            Post Free Property Ad
+                  <div className="py-5 md:pt-[62px] md:pb-[57px]">
+                    <div className="md:w-[91%] px-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full md:after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
+                      <div className="hidden md:block">
+                        <div className="rent flex flex-col md:flex-row items-center gap-[60px] pb-[25px] pt-5">
+                          <a href="" className="text-[#333333]">
+                            Buy
                           </a>
+                          <a href="">Rent</a>
+                          <a href="">Projects</a>
+                          <a href="">Commercial</a>
+                          <a href="">New Launch</a>
+                          <div className="relative">
+                            <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
+                              NEW
+                            </span>
+
+                            <a
+                              href="#"
+                              className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
+                            >
+                              Post Free Property Ad
+                            </a>
+                          </div>
                         </div>
                       </div>
-                      <div className="py-[7.5px] flex items-center gap-8">
+                      <div className="py-[7.5px] flex flex-col md:flex-row items-center gap-8">
                         {/* Location */}
                         <div className="flex items-center gap-2">
                           <FaLocationDot className="text-[#38A9FF] text-lg" />
@@ -276,16 +279,16 @@ const Banner = () => {
                 </div>
               </div>
               <div className="item">
-                <div className="relative byliner3 rounded-[20px] ps-[111px] -z-1">
+                <div className="relative byliner3 rounded-[20px] px-4 md:px-0 md:ps-[111px] -z-1 h-screen">
                   <div className="absolute bottom-0 right-0">
                     <img
                       src={bannerImage}
                       alt="Banner Image"
-                      className="w-[971px]"
+                      className="lg:w-[971px]"
                     />
                   </div>
-                  <div className="w-[495px] pt-[110px]">
-                    <h1 className="font-arial font-bold text-[52px] text-[#072135] pb-[26px]">
+                  <div className="md:w-[495px] pt-[110px]">
+                    <h1 className="font-arial font-bold text-4xl md:text-[52px] text-[#072135] pb-[26px]">
                       Find a perfect home you'll love
                     </h1>
                     <p className="font-arial font-bold text-[22px] text-[#072135] leading-8">
@@ -293,30 +296,32 @@ const Banner = () => {
                       rental of real estate.
                     </p>
                   </div>
-                  <div className="pt-[62px] pb-[57px]">
-                    <div className="w-[91%] ppx-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
-                      <div className="rent flex items-center gap-[60px] pb-[25px] pt-5">
-                        <a href="" className="text-[#333333]">
-                          Buy
-                        </a>
-                        <a href="">Rent</a>
-                        <a href="">Projects</a>
-                        <a href="">Commercial</a>
-                        <a href="">New Launch</a>
-                        <div className="relative">
-                          <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
-                            NEW
-                          </span>
-
-                          <a
-                            href="#"
-                            className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
-                          >
-                            Post Free Property Ad
+                  <div className="py-5 md:pt-[62px] md:pb-[57px]">
+                    <div className="md:w-[91%] px-[25px] pt-6 pb-5 bg-[rgba(255,255,255,0.95)] drop-shadow-2xl drop-shadow-[rgba(0,0,0,0.05)] rounded-xl relative after:absolute after:content-[''] after:w-full md:after:h-0.5 after:bg-[#F2F2F2] after:top-1/2 after:left-0 after:-translate-y-1/2">
+                      <div className="hidden md:block">
+                        <div className="rent flex flex-col md:flex-row items-center gap-[60px] pb-[25px] pt-5">
+                          <a href="" className="text-[#333333]">
+                            Buy
                           </a>
+                          <a href="">Rent</a>
+                          <a href="">Projects</a>
+                          <a href="">Commercial</a>
+                          <a href="">New Launch</a>
+                          <div className="relative">
+                            <span className="absolute -top-4 -right-6 bg-[#F2453D] font-arial text-white text-[10px] font-bold w-8 h-4 rounded-[26px] flex items-center justify-center shadow-[0_4px_6px_rgba(0,0,0,0.25)] z-10">
+                              NEW
+                            </span>
+
+                            <a
+                              href="#"
+                              className="text-[#333] dark:text-white hover:text-[#38A9FF] transition"
+                            >
+                              Post Free Property Ad
+                            </a>
+                          </div>
                         </div>
                       </div>
-                      <div className="py-[7.5px] flex items-center gap-8">
+                      <div className="py-[7.5px] flex flex-col md:flex-row items-center gap-8">
                         {/* Location */}
                         <div className="flex items-center gap-2">
                           <FaLocationDot className="text-[#38A9FF] text-lg" />

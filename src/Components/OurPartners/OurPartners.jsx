@@ -16,8 +16,7 @@ const OurPartners = () => {
               Our Partners
             </h3>
           </div>
-          <div className="marquee-container">
-            <div className="marquee-item">
+            <div className="item">
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-10">
                 {' '}
                 <div className="item">
@@ -40,7 +39,6 @@ const OurPartners = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </section>
     </>

@@ -6,15 +6,15 @@ import bg from '../../assets/Images/bg.png';
 const HousingMarket = () => {
   return (
     <>
-      <section className="py-14">
+      <section className="py-10 md:py-14">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full">
             <img src={bg} alt="Background" className="w-full" />
           </div>
           <div className="container">
             <div className="w-[85%] mx-auto">
-              <div className="flex items-center">
-                <div className="img">
+              <div className="md:flex items-center">
+                <div className="img pb-5 md:pb-0">
                   <img src={housingMarketImage} alt="Housing Market Image" />
                 </div>
                 <div className="">

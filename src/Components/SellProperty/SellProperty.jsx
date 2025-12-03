@@ -6,8 +6,8 @@ import bg from '../../assets/Images/bg.png';
 const SellProperty = () => {
   return (
     <>
-      <section className="py-14">
-        <div className="container">
+      <section className="py-10 md:py-14">
+        <div className="container mx-4 lg:mx-0">
           <div className="relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full -z-10">
               <img
@@ -16,7 +16,7 @@ const SellProperty = () => {
                 className="w-full h-full object-cover"
               />
             </div>{' '}
-            <div className="w-[85%] mx-auto rounded-xl shadow-sm sellLenier py-[27px] px-[53px]">
+            <div className="md:w-[85%] mx-auto rounded-xl shadow-sm sellLenier py-[27px] px-[53px]">
               <div className="flex flex-col md:flex-row items-center gap-0">
                 <div className="w-full md:w-[60%]">
                   <div className="w-full md:w-[430px]">
@@ -36,7 +36,7 @@ const SellProperty = () => {
                     <MdKeyboardArrowRight className="text-white text-xl font-bold ps-1" />
                   </a>{' '}
                 </div>
-                <div className="w-full md:w-[40%] mt-6 md:mt-0">
+                <div className="w-full md:w-[40%] mt-10 md:mt-0">
                   <img
                     src={sellPropertyImage}
                     alt="Illustration of property selling process"

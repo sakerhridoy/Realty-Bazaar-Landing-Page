@@ -6,16 +6,16 @@ import bg from '../../assets/Images/bg.png';
 const CalculateProperty = () => {
   return (
     <>
-      <section className="py-14">
+      <section className="py-10 md:py-14">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full">
             <img src={bg} alt="Background" className="w-full" />
           </div>
-          <div className="container">
+          <div className="container mx-4 lg:mx-0">
             <div className="w-[85%] mx-auto">
-              <div className="flex items-center gap-0">
-                <div className="w-[60%]">
-                  <div className="w-[430px]">
+              <div className="md:flex items-center gap-0">
+                <div className="md:w-[60%]">
+                  <div className="md:w-[430px]">
                     <h4 className="font-arial font-bold text-[32px] text-[#072135] pb-[18px]">
                       Calculate the cost of your property
                     </h4>
@@ -34,7 +34,7 @@ const CalculateProperty = () => {
                     <MdKeyboardArrowRight className="text-[#38A9FF] text-xl font-bold ps-1" />
                   </a>{' '}
                 </div>
-                <div className="w-[40%]">
+                <div className="md:w-[40%] pt-10 md:pt-0">
                   <img src={calculateProperty} alt="Calculate Property" />
                 </div>
               </div>

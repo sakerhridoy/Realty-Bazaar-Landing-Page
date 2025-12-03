@@ -49,14 +49,14 @@ const Agents = () => {
 
   return (
     <>
-      <section className="pb-[95px]">
-        <div className="container">
+      <section className="pb-10 md:pb-[95px]">
+        <div className="container mx-4 lg:mx-0">
           <div className="headline text-center pb-[47px]">
             <h2 className="font-arial font-bold text-[35px] text-[#38A9FF]">
               Top real estate agents
             </h2>
           </div>
-          <div className="flex gap-[92px] items-center justify-center">
+          <div className="grid md:grid-cols-4 gap-10 md:gap-[92px] items-center justify-center">
             {agents.map(agent => (
               <div key={agent.id} className="w-[230px] text-center">
                 <img

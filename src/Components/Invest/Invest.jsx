@@ -57,13 +57,13 @@ const Invest = () => {
 
   return (
     <>
-      <section className="py-[95px]">
+      <section className="py-10 md:py-[95px]">
         <div className="relative">
           <div className="absolute top-0 left-0 w-full">
             <img src={bg} alt="Background" className="w-full" />
           </div>
-          <div className="container">
-            <div className="flex justify-between  py-[90px] px-[70px]">
+          <div className="container mx-4 lg:mx-0">
+            <div className="md:flex justify-between  md:py-[90px] md:px-[70px] mx-4 lg:mx-0">
               {' '}
               <div className="left pb-12">
                 <div className="headline pb-[22px]">
@@ -135,15 +135,15 @@ const Invest = () => {
                       className="inline-flex items-center border border-white rounded-sm py-[11px] px-[23px] text-base text-white font-arial font-bold"
                     >
                       Learn more
-                      <MdKeyboardArrowRight className="text-white text-xl font-bold ps-1" />
+                      <MdKeyboardArrowRight className="text-white text-xl font-bold ps-1 hidden md:block" />
                     </a>
                   </div>
 
-                  <div className="img w-[80%] h-full ">
+                  <div className="img w-full md:w-[80%] h-full ">
                     <img
                       src={card}
                       alt="card"
-                      className="w-[88%] object-cover rounded-tl-[900px] rounded-bl-[200px] absolute -bottom-20 left-12"
+                      className="w-full md:w-[88%] object-cover rounded-tl-[600px] md:rounded-tl-[900px] md:rounded-bl-[200px] md:absolute -bottom-20 md:left-12 "
                     />
                   </div>
                 </div>

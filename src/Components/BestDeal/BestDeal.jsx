@@ -49,8 +49,8 @@ const BestDeal = () => {
   ];
 
   return (
-    <section className="py-[95px]">
-      <div className="container">
+    <section className="py-10 md:py-[95px]">
+      <div className="container mx-4 lg:mx-0">
         <div className="relative">
           <div className="headline text-center">
             <h2 className="font-arial font-bold text-[35px] text-[#072135] pb-8">
@@ -68,7 +68,7 @@ const BestDeal = () => {
   flex items-center justify-center
 "
           >
-            <IoArrowBackSharp className="text-[#072135] text-md" />
+            <IoArrowBackSharp className="text-[#072135] text-md hidden md:block" />
           </button>
 
           <button
@@ -80,7 +80,7 @@ const BestDeal = () => {
   flex items-center justify-center
 "
           >
-            <IoArrowForwardSharp className="text-[#072135] text-xl" />
+            <IoArrowForwardSharp className="text-[#072135] text-xl hidden md:block" />
           </button>
 
           {/* Swiper Slider */}
@@ -104,7 +104,7 @@ const BestDeal = () => {
           >
             {data.map((item, i) => (
               <SwiperSlide key={i}>
-                <div className="border border-[#E5E5E5] rounded-lg shadow-[0_4px_6px_rgba(0,0,0,0.1)]">
+                <div className="border border-[#E5E5E5] rounded-lg shadow-[0_4px_6px_rgba(0,0,0,0.1)] mx-4 lg:mx-0">
                   <div className="img pb-[31px] relative">
                     <img
                       src={item.img}

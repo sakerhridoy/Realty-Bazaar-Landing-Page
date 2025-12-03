@@ -8,16 +8,16 @@ import { BsArrowUpRightCircle } from 'react-icons/bs';
 const GotProperty = () => {
   return (
     <>
-      <section className="py-[95px]">
-        <div className="container">
-          <div className="headline text-center">
+      <section className="py-10 md:py-[95px]">
+        <div className="container mx-4 lg:mx-0">
+          <div className="headline text-center mx-4 lg:mx-0">
             <h2 className="font-arial font-bold text-[35px] text-[#38A9FF] pb-8">
               Explore property related services
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-[31px] gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 pb-[31px] gap-4 mx-4 lg:mx-0">
             {' '}
-            <div className="item pb-[49px] pe-[15px] border-r border-[#E5E5E5]">
+            <div className="item pb-[49px] pe-[15px] md:border-r border-[#E5E5E5]">
               <div className="img pb-2">
                 <img
                   src={propertyImage1}
@@ -39,7 +39,7 @@ const GotProperty = () => {
                 </div>
               </div>
             </div>
-            <div className="item pb-[49px] px-[15px] border-r border-[#E5E5E5]">
+            <div className="item pb-[49px] px-[15px] md:border-r border-[#E5E5E5]">
               <div className="img pb-2">
                 <img
                   src={propertyImage2}
@@ -61,7 +61,7 @@ const GotProperty = () => {
                 </div>
               </div>
             </div>
-            <div className="item pb-[49px] px-[15px] border-r border-[#E5E5E5]">
+            <div className="item pb-[49px] px-[15px] md:border-r border-[#E5E5E5]">
               <div className="img pb-2">
                 <img
                   src={propertyImage2}

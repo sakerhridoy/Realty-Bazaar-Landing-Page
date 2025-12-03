@@ -18,10 +18,8 @@ const Footer = () => {
 
         <div className="relative z-10 container">
           <div className="mainFooter pt-[53px] pb-[58px]">
-
             {/* -------- TOP GRID -------- */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-[123px]">
-
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-[123px] mx-4 lg:mx-0">
               {/* ABOUT WEBSITE */}
               <div className="item">
                 <h4 className="font-arial font-bold text-sm text-[#38A9FF] tracking-[0.15em] pb-6 uppercase">
@@ -78,41 +76,49 @@ const Footer = () => {
                   <a href="#">Help</a>
                 </div>
               </div>
-
             </div>
 
             {/* -------- DOWNLOAD APP SECTION -------- */}
-            <div className="w-[82%] py-[23px] bg-[#0C3452] text-center rounded-t-lg mx-auto mt-12">
-              <h3 className="font-arial font-bold text-[32px] text-white">
+            <div className="w-[82%] py-[23px] bg-[#0C3452] text-center rounded-lg mx-auto px-4 md:px-0 mt-12">
+              <h3 className="font-arial font-bold text-2xl md:text-[32px] text-white">
                 Download Our Mobile App
               </h3>
-              <p className="font-arial font-normal text-[17px] text-white pt-0.5">
-                Find everything you need for buying, selling and renting property
-                with our mobile app.
+              <p className="font-arial font-normal text-[14px] md:text-[17px] text-white pt-0.5">
+                Find everything you need for buying, selling and renting
+                property with our mobile app.
               </p>
 
               {/* STORE BUTTONS */}
-              <div className="w-[317px] flex items-center justify-center gap-[17px] pt-[15px] mx-auto">
-
+              <div className="md:w-[317px] flex items-center justify-center gap-[17px] pt-[15px] mx-auto">
                 {/* APPLE BUTTON */}
                 <div className="w-1/2 bg-black rounded-sm p-2.5 cursor-pointer">
                   <div className="flex items-center gap-2.5">
                     <img src={apple} alt="Apple Logo" className="w-[25px]" />
-                    <img src={appleStore} alt="Apple Store" className="w-[92px]" />
+                    <img
+                      src={appleStore}
+                      alt="Apple Store"
+                      className="w-[92px]"
+                    />
                   </div>
                 </div>
 
                 {/* GOOGLE PLAY BUTTON */}
                 <div className="w-1/2 bg-black rounded-sm p-2.5 cursor-pointer">
                   <div className="flex items-center gap-2.5">
-                    <img src={playStore} alt="PlayStore Logo" className="w-[25px]" />
-                    <img src={googleStore} alt="Google Play" className="w-[92px]" />
+                    <img
+                      src={playStore}
+                      alt="PlayStore Logo"
+                      className="w-[25px]"
+                    />
+                    <img
+                      src={googleStore}
+                      alt="Google Play"
+                      className="w-[92px]"
+                    />
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
         </div>
       </div>
