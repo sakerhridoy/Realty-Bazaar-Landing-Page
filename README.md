@@ -6,7 +6,7 @@ banner, animated elements, price slider, and reusable UI components.
 
 ---
 
-### Live Demo : https://realty-bazaar-landing-page.vercel.app/
+#### Live Demo : https://realty-bazaar-landing-page.vercel.app/
 
 ## 🚀 Features
 
