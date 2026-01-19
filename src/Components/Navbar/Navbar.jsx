@@ -1,15 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/Images/logo.png';
 import { MdOutlineKeyboardArrowDown, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
-import { FaUserLock } from 'react-icons/fa';
+import { FaUserLock, FaHeart } from 'react-icons/fa';
+import { IoCartOutline } from 'react-icons/io5';
+import { useShop } from '../../context/ShopContext';
 
 const Navbar = () => {
+const navigate = useNavigate();
 const [darkMode, setDarkMode] = useState(false);
-const [showProfile, setShowProfile] = useState(false);
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 const [propertyData, setPropertyData] = useState({ title: '', location: '', price: '' });
 const [showPropertyForm, setShowPropertyForm] = useState(false);
 const [formError, setFormError] = useState(null);
+const { cart, wishlist, user, logout } = useShop();
 
 const firstInputRef = useRef(null);
 const addPropertyButtonRef = useRef(null);
@@ -62,10 +66,10 @@ return (
       {/* Logo & Region */}{' '}
       <div className="flex items-center gap-4">
         {' '}
-        <a href="/" aria-label="Go to homepage">
+        <Link to="/" aria-label="Go to homepage">
           {' '}
           <img src={logo} alt="Logo" className="w-36" />{' '}
-        </a>{' '}
+        </Link>{' '}
         <select className="hidden md:block w-24 rounded-full bg-gray-200 dark:bg-gray-700 text-sm text-center text-gray-900 dark:text-white py-1 px-2">
           {' '}
           <option value="all">All USA</option>{' '}
@@ -119,31 +123,39 @@ return (
           />
         </button>
 
-        <div className="relative">
-          <button
-            onClick={() => setShowProfile(!showProfile)}
-            aria-expanded={showProfile}
+        <div className="hidden md:flex items-center gap-3">
+          <Link
+            to="/wishlist"
+            className="relative bg-white text-black"
+            aria-label="Wishlist"
           >
-            <FaUserLock className="text-2xl text-gray-900 dark:text-white" />
+            <FaHeart className="text-xl text-[#38A9FF]" />
+            {wishlist.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {wishlist.length}
+              </span>
+            )}
+          </Link>
+          <button
+            onClick={() => navigate('/cart')}
+            className="relative bg-white text-black"
+            aria-label="Cart"
+          >
+            <IoCartOutline className="text-2xl text-[#072135]" />
+            {cart.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                {cart.length}
+              </span>
+            )}
           </button>
-          {showProfile && (
-            <div className="absolute right-0 mt-2 w-44 bg-white dark:bg-gray-800 text-black dark:text-white shadow-xl rounded-md p-3">
-              <p className="font-bold">User Profile</p>
-              <p className="text-sm mt-1">Email: user@mail.com</p>
-              <button className="mt-2 w-full bg-blue-500 hover:bg-blue-600 text-white py-1 rounded">
-                Logout
-              </button>
-            </div>
-          )}
+          <button
+            onClick={() => navigate(user ? '/login' : '/login')}
+            className="flex items-center gap-2 border border-[#38A9FF] text-[#38A9FF] px-3 py-1 rounded"
+          >
+            <FaUserLock />
+            {user ? 'Account' : 'Login'}
+          </button>
         </div>
-
-        <button
-          onClick={() => setShowPropertyForm(true)}
-          className="hidden md:flex bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded"
-          ref={addPropertyButtonRef}
-        >
-          + Add Property
-        </button>
 
         {/* Mobile menu button */}
         <button
@@ -159,20 +171,31 @@ return (
     {mobileMenuOpen && (
       <div className="md:hidden fixed inset-0 bg-black/70 flex justify-center items-center -z-40">
         <ul className="bg-white dark:bg-gray-900 w-full h-full flex flex-col justify-center items-center gap-6 text-xl">
-          {navItems.map(item => (
-            <li key={item.title} className="text-center">
-              {item.title}
-              <ul className="mt-2 flex flex-col gap-2 text-base">
-                {item.subItems.map(sub => (
-                  <li key={sub.name}>
-                    <a href={sub.href} onClick={() => setMobileMenuOpen(false)}>
-                      {sub.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+          <li className="text-center">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li className="text-center">
+            <Link to="/products" onClick={() => setMobileMenuOpen(false)}>
+              Products
+            </Link>
+          </li>
+          <li className="text-center">
+            <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)}>
+              Wishlist
+            </Link>
+          </li>
+          <li className="text-center">
+            <Link to="/cart" onClick={() => setMobileMenuOpen(false)}>
+              Cart
+            </Link>
+          </li>
+          <li className="text-center">
+            <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+              {user ? 'Account' : 'Login'}
+            </Link>
+          </li>
           <li>
             <button
               onClick={() => {

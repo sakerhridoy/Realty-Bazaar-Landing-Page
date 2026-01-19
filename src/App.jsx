@@ -1,35 +1,33 @@
-import './App.css'
-import Agents from './Components/Agents/Agents';
-import Banner from './Components/Banner/Banner';
-import BestDeal from './Components/BestDeal/BestDeal';
-import CalculateProperty from './Components/CalculateProperty/CalculateProperty';
-import Footer from './Components/Footer/Footer';
-import GotProperty from './Components/GotProperty/GotProperty';
-import HousingMarket from './Components/HousingMarket/HousingMarket';
-import Invest from './Components/Invest/Invest';
+import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
-import OurPartners from './Components/OurPartners/OurPartners';
-import SellProperty from './Components/SellProperty/SellProperty';
-import Services from './Components/Services/Services';
+import Footer from './Components/Footer/Footer';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
+import Wishlist from './pages/Wishlist';
+import Checkout from './pages/Checkout';
+import OrderConfirmation from './pages/OrderConfirmation';
+import Login from './pages/Login';
 
 function App() {
-
   return (
     <>
       <Navbar />
-      <Banner />
-      <Services />
-      <HousingMarket />
-      <GotProperty />
-      <CalculateProperty />
-      <BestDeal />
-      <Invest />
-      <Agents />
-      <SellProperty />
-      <OurPartners />
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
 
-export default App
+export default App;
